@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Central de Comando — Franca-SP | Agência IA Multi-Nichos (Meta R$ 1.000+)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+
+  <!-- Top Header -->
+  <header class="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            ● MODO CAÇADOR: 100% SEM SITE ATIVO
+          </span>
+          <span class="text-xs text-slate-400">Histórico Multi-Nichos • Franca/SP</span>
+        </div>
+        <h1 class="text-xl md:text-2xl font-extrabold text-white mt-1">
+          Central de Comando — Franca-SP (Meta R$ 1.000 em 7 Dias)
+        </h1>
+      </div>
+
+      <!-- Configurador de Link Público Clicável -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 bg-slate-950 p-2.5 rounded-2xl border border-slate-800">
+        <div class="text-xs px-2">
+          <label for="base-url-input" class="block text-slate-400 font-semibold">🔗 URL Pública Base (Link Clicável nos Disparos):</label>
+          <input id="base-url-input" type="text" value="https://mateusduarte-max.github.io/vitrine-digital" oninput="applyBaseUrl()"
+                 class="mt-1 w-72 md:w-80 bg-slate-900 text-emerald-400 font-mono text-xs px-3 py-1.5 rounded-lg border border-slate-700 focus:outline-none focus:border-emerald-500" />
+        </div>
+        <button type="button" onclick="applyBaseUrl()"
+                class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-all">
+          Atualizar Links
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-8 space-y-6">
+
+    <!-- Painel de Metas & KPIs Financeiros -->
+    <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+        <p class="text-xs text-slate-400 uppercase font-bold">Meta 7 Dias (Lucro PIX)</p>
+        <div class="flex items-baseline justify-between mt-2">
+          <span id="kpi-revenue" class="text-2xl md:text-3xl font-extrabold text-emerald-400">R$ 0</span>
+          <span class="text-xs text-slate-400">de R$ 1.000</span>
+        </div>
+        <div class="w-full bg-slate-800 h-2 rounded-full mt-3 overflow-hidden">
+          <div id="kpi-progress-bar" class="bg-emerald-500 h-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-emerald-500/40 rounded-2xl p-5">
+        <p class="text-xs text-emerald-400 uppercase font-bold">🔥 Empresas 100% Sem Site</p>
+        <div class="text-2xl md:text-3xl font-extrabold text-white mt-2">20 Alvos</div>
+        <p class="text-xs text-slate-400 mt-1">No histórico total: 29 páginas criadas</p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+        <p class="text-xs text-slate-400 uppercase font-bold">Abordagens Disparadas</p>
+        <div id="kpi-contacted" class="text-2xl md:text-3xl font-extrabold text-amber-400 mt-2">0 / 29</div>
+        <p class="text-xs text-slate-400 mt-1">Histórico salvo automaticamente</p>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+        <p class="text-xs text-slate-400 uppercase font-bold">Estratégia 2 Passos</p>
+        <div class="text-sm font-extrabold text-white mt-2">1º ⚡ Quebra-Gelo (Sem Link)</div>
+        <p class="text-xs text-emerald-400 mt-1">2º 📲 Envio do Site Pronto (R$ 500)</p>
+      </div>
+    </section>
+
+    <!-- Filtros de Estratégia (100% Sem Site vs Histórico) e Abas de Nichos -->
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+        <div>
+          <h2 class="text-sm font-bold text-emerald-300">🎯 Filtro do Agente Caçador (Prioridade: Empresas 100% Sem Site no Google)</h2>
+          <p class="text-xs text-slate-400 mt-0.5">
+            Use o botão <strong>"⚡ 1. Quebra-Gelo (Sem Link)"</strong> primeiro para a recepcionista/dono responder na hora, ou mande direto o <strong>"📲 2. Enviar Site Pronto"</strong>.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2 shrink-0">
+          <button type="button" id="btn-mode-nosite" onclick="setSiteFilter('no-website')"
+                  class="px-3.5 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold shadow">
+            🔥 Apenas 100% Sem Site (20)
+          </button>
+          <button type="button" id="btn-mode-all" onclick="setSiteFilter('all')"
+                  class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold">
+            📁 Histórico Completo (29)
+          </button>
+        </div>
+      </div>
+
+      <!-- Abas de Nichos Atacados (Histórico Multi-Nichos) -->
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="text-xs font-bold text-slate-400 uppercase mr-1">Nichos no Histórico:</span>
+          <button type="button" onclick="setNicheFilter('all')" id="niche-all"
+                  class="niche-btn px-3 py-1.5 rounded-lg bg-slate-800 text-white text-xs font-bold">
+            Todos os Nichos
+          </button>
+          <button type="button" onclick="setNicheFilter('Odontologia & Estética')" id="niche-odonto"
+                  class="niche-btn px-3 py-1.5 rounded-lg bg-teal-500/20 text-teal-300 text-xs font-semibold">
+            🦷 Odontologia &amp; Harmonização
+          </button>
+          <button type="button" onclick="setNicheFilter('Estética & Biomedicina')" id="niche-estetica"
+                  class="niche-btn px-3 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 text-xs font-semibold">
+            ✨ Estética &amp; Biomedicina
+          </button>
+          <button type="button" onclick="setNicheFilter('Móveis Planejados & Arquitetura')" id="niche-moveis"
+                  class="niche-btn px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 text-xs font-semibold">
+            🪚 Móveis Planejados (Alto Ticket)
+          </button>
+        </div>
+        <div id="showing-counter" class="text-xs font-semibold text-slate-400"></div>
+      </div>
+    </section>
+
+    <!-- Lista de Empresas -->
+    <section id="leads-container" class="space-y-4"></section>
+
+  </main>
+
+  <!-- Modal de Scripts Closer (Co-Piloto de Vendas) -->
+  <div id="script-modal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-2xl w-full p-6 space-y-5 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div>
+          <span class="text-xs font-bold uppercase text-emerald-400">Agente Closer IA — Scripts de Fechamento</span>
+          <h3 id="modal-clinic-name" class="text-lg font-bold text-white"></h3>
+        </div>
+        <button type="button" onclick="closeModal()" class="text-slate-400 hover:text-white text-xl font-bold px-2">✕</button>
+      </div>
+
+      <div class="space-y-4 text-xs">
+        <div class="bg-slate-950 p-4 rounded-2xl border border-emerald-500/40 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-emerald-300">⚡ Passo 1 (Opcional) — Quebra-Gelo Sem Link (70% respondem rápido)</span>
+            <button type="button" onclick="copyText('modal-msg-0')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold">Copiar Texto</button>
+          </div>
+          <pre id="modal-msg-0" class="whitespace-pre-wrap text-slate-300 font-sans leading-relaxed"></pre>
+        </div>
+
+        <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-emerald-400">📲 Passo 2 — Envio da Demonstração Pronta (Foco: Sem Site no Google)</span>
+            <button type="button" onclick="copyText('modal-msg-1')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold">Copiar Texto</button>
+          </div>
+          <pre id="modal-msg-1" class="whitespace-pre-wrap text-slate-300 font-sans leading-relaxed"></pre>
+        </div>
+
+        <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-amber-400">🔄 Follow-up 24h (Se visualizaram e não responderam)</span>
+            <button type="button" onclick="copyText('modal-msg-2')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold">Copiar Texto</button>
+          </div>
+          <pre id="modal-msg-2" class="whitespace-pre-wrap text-slate-300 font-sans leading-relaxed"></pre>
+        </div>
+
+        <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-purple-400">💰 Fechamento &amp; Quebra de Objeção (PIX R$ 500 ou 2x R$ 250)</span>
+            <button type="button" onclick="copyText('modal-msg-3')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold">Copiar Texto</button>
+          </div>
+          <pre id="modal-msg-3" class="whitespace-pre-wrap text-slate-300 font-sans leading-relaxed"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const BUILD_BASE_URL = "https://mateusduarte-max.github.io/vitrine-digital";
+    const LEADS_DATA = [{"index":1,"id":"dra-bruna-lemos-odonto","name":"Dra. Bruna Lemos — Odontologia Estética","niche":"Odontologia & Estética","batch":"Lote 2 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Diretório DentMap (Sem Site no Google)","category":"Odontologia Estética, Implantes & Lentes","neighborhood":"Centro","address":"R. Floriano Peixoto, 1723 - Centro, Franca - SP","phone":"(16) 99444-1287","phoneDigits":"5516994441287","theme":"dental-clean","diagnostic":"100% SEM SITE PRÓPRIO: Aparece apenas em guia DentMap junto com concorrentes. Alvo perfeito para ativar site próprio no Google.","services":["Lentes de Contato Dental & Facetas","Implantes Dentários Seguros","Clareamento Dental de Consultório","Prevenção & Clínica Geral"],"previewPath":"/p/dra-bruna-lemos-odonto/"},{"index":2,"id":"dra-maria-eduarda-oliveira","name":"Dra. Maria Eduarda Oliveira — Odontologia","niche":"Odontologia & Estética","batch":"Lote 2 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Diretório DentMap (Sem Site no Google)","category":"Odontologia Clínica & Estética do Sorriso","neighborhood":"São José","address":"Rua José Bartocci, 2467 - São José, Franca - SP","phone":"(16) 99375-7337","phoneDigits":"5516993757337","theme":"dental-clean","diagnostic":"100% SEM SITE PRÓPRIO: Consultório no bairro nobre São José listado apenas em diretório terceiro.","services":["Clareamento & Estética Dental","Restaurações Estéticas em Resina","Profilaxia & Check-up Preventivo","Atendimento Clínico Personalizado"],"previewPath":"/p/dra-maria-eduarda-oliveira/"},{"index":3,"id":"dra-flavia-calmona","name":"Dra. Flávia Calmona — Consultório Odontológico","niche":"Odontologia & Estética","batch":"Lote 2 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Diretório DentMap (Sem Site no Google)","category":"Consultório Odontológico & Estética","neighborhood":"Vila Santos Dumont","address":"R. Francisco Marcolino, 932 - Vila Santos Dumont, Franca - SP","phone":"(16) 99349-4985","phoneDigits":"5516993494985","theme":"dental-clean","diagnostic":"100% SEM SITE PRÓPRIO: Listada apenas em catálogo odontológico sem página própria de agendamentos.","services":["Estética Dental & Clareamento","Reabilitação & Próteses Dentárias","Dentística & Tratamentos Clínicos","Avaliação Odontológica Individual"],"previewPath":"/p/dra-flavia-calmona/"},{"index":4,"id":"dra-graciela-brazao","name":"Dra. Graciela Brazão — Odontologia","niche":"Odontologia & Estética","batch":"Lote 2 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Diretório DentMap (Sem Site no Google)","category":"Cirurgiã-Dentista & Estética Bucal","neighborhood":"Centro","address":"R. Estevão Leão Bourroul, 1842 - Centro, Franca - SP","phone":"(16) 99270-1340","phoneDigits":"5516992701340","theme":"dental-clean","diagnostic":"100% SEM SITE PRÓPRIO: Consultório tradicional no Centro de Franca sem botão de site no Google.","services":["Odontologia Estética & Facetas","Clareamento Dental Supervisionado","Limpeza & Prevenção Periodontal","Reabilitação & Clínica Geral"],"previewPath":"/p/dra-graciela-brazao/"},{"index":5,"id":"dra-erika-junqueira","name":"Dra. Erika Junqueira de Carvalho — Odontologia","niche":"Odontologia & Estética","batch":"Lote 2 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Catálogo Local (Sem Site no Google)","category":"Cirurgiã-Dentista & Reabilitação Oral","neighborhood":"Centro","address":"R. Thomaz Gonzaga, 1963 - Centro, Franca - SP","phone":"(16) 99303-2765","phoneDigits":"5516993032765","theme":"dental-clean","diagnostic":"100% SEM SITE PRÓPRIO: Encontrada apenas em listagem textual sem nenhuma Landing Page para captar pacientes particulares.","services":["Estética do Sorriso & Clareamento","Restaurações & Reabilitação Dental","Prevenção & Saúde Gengival","Avaliação Particular Personalizada"],"previewPath":"/p/dra-erika-junqueira/"},{"index":6,"id":"dra-fernanda-neves-souza","name":"Dra. Fernanda Neves Souza — Odontologia","niche":"Odontologia & Estética","batch":"Lote 2 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Catálogo Local (Sem Site no Google)","category":"Cirurgiã-Dentista & Odontologia Estética","neighborhood":"Centro","address":"Rua Estevão Leão Bourroul, 1975 - Conj. 3 - Centro, Franca - SP","phone":"(16) 99198-6982","phoneDigits":"5516991986982","theme":"dental-clean","diagnostic":"100% SEM SITE PRÓPRIO: Depende de indicações e listas locais; uma página própria destaca o consultório para clientes particulares.","services":["Clareamento & Harmonização do Sorriso","Facetas & Restaurações Estéticas","Profilaxia & Check-up Odontológico","Atendimento Clínico Geral"],"previewPath":"/p/dra-fernanda-neves-souza/"},{"index":7,"id":"dr-guilherme-machado","name":"Dr. Guilherme Machado — Odontologia","niche":"Odontologia & Estética","batch":"Lote 2 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Catálogo Local (Sem Site no Google)","category":"Cirurgião-Dentista, Estética & Reabilitação","neighborhood":"Centro","address":"R. Voluntários da Franca, 1785 - Sala 05 - Centro, Franca - SP","phone":"(16) 99160-9117","phoneDigits":"5516991609117","theme":"dental-clean","diagnostic":"100% SEM SITE PRÓPRIO: Ponto nobre na Voluntários da Franca, mas invisível para quem busca um site oficial no Google.","services":["Reabilitação Oral & Próteses","Estética Dental & Clareamento","Restaurações de Alta Performance","Prevenção & Urgências Odontológicas"],"previewPath":"/p/dr-guilherme-machado/"},{"index":8,"id":"dra-maria-laura-nascimento","name":"Dra. Maria Laura Nascimento — Odontologia & Estética","niche":"Odontologia & Estética","batch":"Lote 2 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Instagram @dra.marialauranasc (Sem Site)","category":"Odontologia Estética & Harmonização do Sorriso","neighborhood":"Franca","address":"Atendimento com Hora Marcada — Franca - SP","phone":"(16) 99430-6692","phoneDigits":"5516994306692","theme":"harmony-gold","diagnostic":"100% SEM SITE PRÓPRIO: Atua apenas pelo Instagram (@dra.marialauranasc) com link direto para WhatsApp sem página de triagem.","services":["Facetas em Resina & Design do Sorriso","Clareamento Dental Personalizado","Rejuvenescimento & Estética Orofacial","Prevenção & Profilaxia Premium"],"previewPath":"/p/dra-maria-laura-nascimento/"},{"index":9,"id":"mirra-estetica-franca","name":"Mirra Estética — Centro Estético Avançado","niche":"Estética & Biomedicina","batch":"Lote 2 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Agenda Fresha / GuiaFix (Sem Site Próprio)","category":"Estética Facial, Corporal & Criofrequência","neighborhood":"Jardim Portinari","address":"Av. Hotto Paiva, 1415 - Jardim Portinari, Franca - SP","phone":"(16) 99234-0018","phoneDigits":"5516992340018","theme":"esthetics-luxury","diagnostic":"100% SEM SITE PRÓPRIO: Usa link genérico do Fresha/GuiaFix. Uma Landing Page própria com Triagem WhatsApp vende muito mais pacotes.","services":["Criofrequência & Combate à Flacidez","Gordura Localizada & Celulite","Limpeza de Pele & Peelings Renováveis","Massagens Estéticas & Drenagem"],"previewPath":"/p/mirra-estetica-franca/"},{"index":10,"id":"dra-talita-goncalves","name":"Dra. Talita Gonçalves — Biomédica & Estética","niche":"Estética & Biomedicina","batch":"Lote 2 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Agenda Fresha (Sem Site Próprio)","category":"Biomedicina Estética & Preenchimento Labial","neighborhood":"Centro","address":"R. Dr. Alcindo Ribeiro Conrado, 1000 - Centro, Franca - SP","phone":"(16) 99174-0262","phoneDigits":"5516991740262","theme":"harmony-gold","diagnostic":"100% SEM SITE PRÓPRIO: Biomédica no Centro de Franca usando apenas página genérica do Fresha.","services":["Preenchimento Labial & Contorno","Toxina Botulínica (Botox)","Bioestimuladores & Firmeza Dérmica","Protocolos Faciais Personalizados"],"previewPath":"/p/dra-talita-goncalves/"},{"index":11,"id":"clinica-estetica-virtuosa","name":"Clínica Estética Virtuosa — Franca","niche":"Estética & Biomedicina","batch":"Lote 2 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Diretório RedeHarmoniza (Sem Site Local)","category":"Estética Facial, Corporal, Harmonização & Laser","neighborhood":"Cidade Nova","address":"Av. Major Nicácio, 1800 - Cidade Nova, Franca - SP","phone":"(16) 99999-1723","phoneDigits":"5516999991723","theme":"esthetics-luxury","diagnostic":"100% SEM SITE LOCAL PRÓPRIO: Unidade na Av. Major Nicácio sem Landing Page exclusiva de agendamentos locais.","services":["Harmonização Facial & Botox","Protocolos Corporais & Emagrecimento","Estética Facial & Limpeza Premium","Depilação & Tecnologias Estéticas"],"previewPath":"/p/clinica-estetica-virtuosa/"},{"index":12,"id":"simone-rodrigues-estetica","name":"Simone Rodrigues — Estética Facial & Corporal","niche":"Estética & Biomedicina","batch":"Lote 2 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Guia InFranca (Sem Site no Google)","category":"Tratamentos Estéticos Faciais, Corporais & Depilação","neighborhood":"Franca","address":"Atendimento com Hora Marcada — Franca - SP","phone":"(16) 99464-2909","phoneDigits":"5516994642909","theme":"esthetics-luxury","diagnostic":"100% SEM SITE PRÓPRIO: Aparece apenas no guia InFranca sem nenhuma página oficial para apresentar seus pacotes.","services":["Tratamentos Estéticos Corporais","Estética Facial & Limpeza de Pele","Depilação Especializada & Cuidados","Pacotes Personalizados de Autoestima"],"previewPath":"/p/simone-rodrigues-estetica/"},{"index":13,"id":"lrg-moveis-planejados","name":"LRG Móveis Planejados — Franca","niche":"Móveis Planejados & Arquitetura","batch":"Lote 2 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Guia InFranca (Sem Site no Google)","category":"Móveis Planejados Sob Medida & Projetos 3D","neighborhood":"Jardim Ângela Rosa","address":"Av. Santa Cruz, 3364 - Jardim Ângela Rosa, Franca - SP","phone":"(16) 99383-4908","phoneDigits":"5516993834908","theme":"custom-furniture","diagnostic":"100% SEM SITE PRÓPRIO (Ticket Médio R$ 15.000+): Marcenaria na Av. Santa Cruz que aparece só em lista telefônica. Um único cliente paga 30x o site!","services":["Cozinhas & Áreas Gourmet Planejadas","Closets & Dormitórios Sob Medida","Salas, Painéis & Home Office","Ambientes Comerciais & Clínicas"],"previewPath":"/p/lrg-moveis-planejados/"},{"index":14,"id":"qualiart-moveis-planejados","name":"Qualiart Móveis Planejados — Franca","niche":"Móveis Planejados & Arquitetura","batch":"Lote 2 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Guia InFranca (Sem Site no Google)","category":"Marcenaria Sob Medida, Cozinhas & Quartos Planejados","neighborhood":"Franca","address":"Atendimento e Medição em Franca - SP","phone":"(16) 99247-9647","phoneDigits":"5516992479647","theme":"custom-furniture","diagnostic":"100% SEM SITE PRÓPRIO (Ticket Médio Alto): Listada apenas no guia InFranca sem vitrine digital para captar orçamentos no Google.","services":["Cozinhas Planejadas Sob Medida","Quartos & Closets Personalizados","Áreas Gourmet, Banheiros & Lavanderias","Visita Técnica & Projeto em Franca"],"previewPath":"/p/qualiart-moveis-planejados/"},{"index":15,"id":"visage-face","name":"Visage Face Harmonização & Estética","niche":"Odontologia & Estética","batch":"Lote 1 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Diretório DentMap / RedeHarmoniza (Sem Site Próprio)","category":"Harmonização Orofacial & Estética Avançada","neighborhood":"Centro","address":"R. Voluntário José Rufino, 1387 - Centro, Franca - SP","phone":"(16) 99989-8369","phoneDigits":"5516999898369","theme":"harmony-gold","diagnostic":"100% SEM SITE PRÓPRIO: Excelente localização no Centro, listada apenas em diretórios terceiros.","services":["Harmonização Orofacial Completa","Toxina Botulínica (Botox Premium)","Preenchimento Labial & Mandibular","Bioestimuladores de Colágeno"],"previewPath":"/p/visage-face/"},{"index":16,"id":"probelle-estetica","name":"Probelle Estética Avançada","niche":"Estética & Biomedicina","batch":"Lote 1 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Agenda Trinks (Sem Site Próprio)","category":"Centro de Saúde & Estética Facial e Corporal","neighborhood":"Parque dos Lima","address":"Rua da Paz, 509 - Parque dos Lima, Franca - SP","phone":"(16) 99725-0998","phoneDigits":"5516997250998","theme":"esthetics-luxury","diagnostic":"100% SEM SITE PRÓPRIO: Depende de página genérica do Trinks; um site oficial passa muito mais autoridade.","services":["Remodelação & Estética Corporal","Rejuvenescimento & Estética Facial","Depilação & Tecnologias a Laser","Avaliação Estética Integrada"],"previewPath":"/p/probelle-estetica/"},{"index":17,"id":"geb-buci-estetica","name":"GeB Buci Estética Avançada","niche":"Estética & Biomedicina","batch":"Lote 1 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Diretório RedeHarmoniza (Sem Site Próprio)","category":"Harmonização Facial & Emagrecimento Estético","neighborhood":"City Petrópolis","address":"Av. São Pedro, 390 - City Petrópolis, Franca - SP","phone":"(16) 99204-8819","phoneDigits":"5516992048819","theme":"esthetics-luxury","diagnostic":"100% SEM SITE PRÓPRIO: Aparece apenas no portal RedeHarmoniza sem página oficial da clínica.","services":["Lipo de Papada & Contorno Facial","Harmonização Facial & Preenchimentos","Protocolos de Emagrecimento & Corpo","Toxina Botulínica & Bioestimuladores"],"previewPath":"/p/geb-buci-estetica/"},{"index":18,"id":"dra-kezia-ferreira","name":"Dra. Kézia Ferreira — Harmonização Facial","niche":"Odontologia & Estética","batch":"Lote 1 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Diretório RedeHarmoniza (Sem Site Próprio)","category":"Harmonização Facial & Rejuvenescimento","neighborhood":"Vila Flores","address":"R. Diógenes Marconi, 1593 - Vila Flores, Franca - SP","phone":"(16) 99376-8640","phoneDigits":"5516993768640","theme":"harmony-gold","diagnostic":"100% SEM SITE PRÓPRIO: Marca pessoal forte na Vila Flores listada apenas em diretório de terceiros.","services":["Harmonização Facial Natural","Preenchimento Labial Delicado","Toxina Botulínica (Botox)","Bioestimulador de Colágeno"],"previewPath":"/p/dra-kezia-ferreira/"},{"index":19,"id":"dra-camila-franca","name":"Dra. Camila França — Odontologia & Estética","niche":"Odontologia & Estética","batch":"Lote 1 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Diretório DentMap (Sem Site Próprio)","category":"Odontologia Estética & Reabilitação do Sorriso","neighborhood":"Estação","address":"R. Gen. Carneiro, 508 - Sala 2 - Estação, Franca - SP","phone":"(16) 99149-6639","phoneDigits":"5516991496639","theme":"dental-clean","diagnostic":"100% SEM SITE PRÓPRIO: Consultório no bairro Estação listado apenas no DentMap.","services":["Estética Dental & Facetas em Resina/Porcelana","Clareamento Dental Seguro","Dentística & Restaurações Estéticas","Prevenção & Check-up Odontológico Digital"],"previewPath":"/p/dra-camila-franca/"},{"index":20,"id":"dra-gabriela-franca","name":"Dra. Gabriela França — Clínica de Estética & Sorriso","niche":"Odontologia & Estética","batch":"Lote 1 (100% Sem Site)","hasWebsite":false,"presenceSource":"Apenas Diretório DentMap / RedeHarmoniza (Sem Site Próprio)","category":"Odontologia Estética, Lentes & Harmonização","neighborhood":"Cidade Nova","address":"R. José Marquês Garcia, 1051 - Cidade Nova, Franca - SP","phone":"(16) 99108-8387","phoneDigits":"5516991088387","theme":"harmony-gold","diagnostic":"100% SEM SITE PRÓPRIO: Localizada na Cidade Nova e listada apenas em diretórios sem site próprio.","services":["Lentes de Contato & Facetas Estéticas","Harmonização Orofacial Integrada","Clareamento Dental de Alta Performance","Toxina Botulínica & Preenchimento Labial"],"previewPath":"/p/dra-gabriela-franca/"},{"index":21,"id":"fisiobeauty-dra-lidiane","name":"Fisiobeauty — Dra. Lidiane","niche":"Estética & Biomedicina","batch":"Lote 1 (Histórico - Já Possui Site)","hasWebsite":true,"presenceSource":"Possui site fisiobeauty.com.br","category":"Arquitetura Dérmica & Harmonização Facial","neighborhood":"Santa Maria Medical Center","address":"Edifício Santa Maria Medical Center - Franca - SP","phone":"(16) 99154-5203","phoneDigits":"5516991545203","theme":"esthetics-luxury","diagnostic":"Histórico Lote 1: Já possui site institucional; manter no CRM para follow-up de Landing Page de campanha.","services":["Mapeamento & Arquitetura Dérmica","Sustentação & Harmonização Facial","Gerenciamento do Envelhecimento","Toxina Botulínica Preventiva"],"previewPath":"/p/fisiobeauty-dra-lidiane/"},{"index":22,"id":"bio-beaux-estetica","name":"Bio Beaux Estética Avançada — Angélica Vergílio","niche":"Estética & Biomedicina","batch":"Lote 1 (Histórico - Já Possui Site)","hasWebsite":true,"presenceSource":"Possui site biobeaux.com.br","category":"Estética Facial & Tecnologias Regenerativas","neighborhood":"Parque dos Lima","address":"R. da Fraternidade, 265 - Parque dos Lima, Franca - SP","phone":"(16) 99437-6126","phoneDigits":"5516994376126","theme":"esthetics-luxury","diagnostic":"Histórico Lote 1: Possui site institucional; oferta posicionada como página rápida de triagem para Instagram.","services":["Estética Facial Regenerativa","Protocolos Anti-Flacidez & Colágeno","Harmonização & Rejuvenescimento","Limpeza de Pele Premium & Peelings"],"previewPath":"/p/bio-beaux-estetica/"},{"index":23,"id":"dra-mariana-veiga","name":"Estética Avançada Dra. Mariana Veiga","niche":"Estética & Biomedicina","batch":"Lote 1 (Histórico - Já Possui Site)","hasWebsite":true,"presenceSource":"Possui site marianaveigaestetica.com.br","category":"Biomedicina Estética & Harmonização Facial","neighborhood":"São José","address":"R. Henrique Fernandes Cunha, 1920 - São José, Franca - SP","phone":"(16) 99193-7955","phoneDigits":"5516991937955","theme":"harmony-gold","diagnostic":"Histórico Lote 1: Já possui site; manter no histórico de disparos enviados.","services":["Clube do Botox & Toxina Botulínica","Preenchimento Labial & Harmonização","Microagulhamento & Qualidade da Pele","Protocolos Corporais & Capilares"],"previewPath":"/p/dra-mariana-veiga/"},{"index":24,"id":"pienezza-dermoestetica","name":"Pienezza Dermoestética — Dra. Paola Pienezza","niche":"Estética & Biomedicina","batch":"Lote 1 (Histórico - Já Possui Site)","hasWebsite":true,"presenceSource":"Possui site pienezzadermoestetica.com.br","category":"Harmonização Facial & Dermoestética","neighborhood":"São José","address":"Av. Dr. Ismael Alonso Y Alonso, 2500 - Sala 211 - São José, Franca - SP","phone":"(16) 99262-8093","phoneDigits":"5516992628093","theme":"harmony-gold","diagnostic":"Histórico Lote 1: Já possui site próprio; mantida no histórico do CRM.","services":["Harmonização Facial Individualizada","Toxina Botulínica & Prevenção","Dermoestética & Bioestimulação","Skincare Clínico & Peelings"],"previewPath":"/p/pienezza-dermoestetica/"},{"index":25,"id":"sano-clinic-prime","name":"Sano Clinic Prime Odontologia","niche":"Odontologia & Estética","batch":"Lote 1 (Histórico - Já Possui Site)","hasWebsite":true,"presenceSource":"Possui site sanoclinicodonto.com.br","category":"Odontologia Multidisciplinar & Estética Prime","neighborhood":"São José","address":"R. Francisco Jorge, 1960 - São José, Franca - SP","phone":"(16) 99606-5790","phoneDigits":"5516996065790","theme":"dental-clean","diagnostic":"Histórico Lote 1: Já possui site institucional.","services":["Implantes Dentários & Reabilitação Oral","Lentes de Contato Dental & Estética","Ortodontia & Alinhadores Modernos","Atendimento Multidisciplinar Integrado"],"previewPath":"/p/sano-clinic-prime/"},{"index":26,"id":"iof-instituto-odontologico","name":"IOF — Instituto Odontológico da Franca","niche":"Odontologia & Estética","batch":"Lote 1 (Histórico - Já Possui Site)","hasWebsite":true,"presenceSource":"Possui site iofranca.com.br","category":"Implantes, Reabilitação Oral & Odontologia Completa","neighborhood":"Centro","address":"Rua Voluntários da Franca, 1857 - Centro, Franca - SP","phone":"(16) 99643-3131","phoneDigits":"5516996433131","theme":"dental-clean","diagnostic":"Histórico Lote 1: Já possui site institucional.","services":["Implantes Dentários & Próteses Fixas","Estética Dental & Clareamento","Ortodontia & Alinhamento Dental","Urgências & Clínica Geral Completa"],"previewPath":"/p/iof-instituto-odontologico/"},{"index":27,"id":"clinica-sempre-sorrindo","name":"Clínica Sempre Sorrindo — Franca","niche":"Odontologia & Estética","batch":"Lote 1 (Histórico - Já Possui Site)","hasWebsite":true,"presenceSource":"Possui site clinicassempresorrindo.com.br","category":"Implantes Dentários & Tratamentos Odontológicos","neighborhood":"Centro","address":"Rua Voluntários da Franca, 1325 - Centro, Franca - SP","phone":"(16) 98165-1441","phoneDigits":"5516981651441","theme":"dental-clean","diagnostic":"Histórico Lote 1: Rede com site institucional.","services":["Implantes Dentários Sem Dor","Próteses & Reabilitação Oral","Aparelhos Ortodônticos & Estética","Avaliação Odontológica Completa"],"previewPath":"/p/clinica-sempre-sorrindo/"},{"index":28,"id":"oral-unic-franca","name":"Oral Unic Implantes Premium — Franca","niche":"Odontologia & Estética","batch":"Lote 1 (Histórico - Já Possui Site)","hasWebsite":true,"presenceSource":"Franquia com portal oralunic.com.br","category":"Clínica Premium de Implantes & Estética Orofacial","neighborhood":"Av. Alonso Y Alonso","address":"Av. Dr. Ismael Alonso Y. Alonso, 1786 - Franca - SP","phone":"(16) 99670-7000","phoneDigits":"5516996707000","theme":"dental-clean","diagnostic":"Histórico Lote 1: Franquia nacional com site próprio.","services":["Implantes Dentários & Carga Imediata","Lentes de Contato Dental em Porcelana","Harmonização Orofacial & Botox","Alinhadores Invisíveis & Clareamento"],"previewPath":"/p/oral-unic-franca/"},{"index":29,"id":"royal-face-franca","name":"Royal Face Clínica de Estética — Franca","niche":"Estética & Biomedicina","batch":"Lote 1 (Histórico - Já Possui Site)","hasWebsite":true,"presenceSource":"Franquia com portal royalface.com.br","category":"Harmonização Facial, Botox & Estética Avançada","neighborhood":"Jardim Consolação","address":"R. Frederico Ozanan, 746 - Jardim Consolação, Franca - SP","phone":"(16) 98123-1214","phoneDigits":"5516981231214","theme":"harmony-gold","diagnostic":"Histórico Lote 1: Franquia nacional com portal próprio.","services":["Toxina Botulínica (Botox) & Prevenção","Fios de Sustentação & Bioestimuladores","Preenchimento Labial, Olheiras & Mandíbula","Lipo de Papada & Estética Corporal"],"previewPath":"/p/royal-face-franca/"}];
+    let currentSiteFilter = 'no-website'; // Default: show 100% no-website leads first
+    let currentNicheFilter = 'all';
+
+    function escapeHtmlClient(str) {
+      return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function getStatusMap() {
+      try {
+        return JSON.parse(localStorage.getItem('franca_crm_status') || '{}');
+      } catch {
+        return {};
+      }
+    }
+
+    function setLeadStatus(id, status) {
+      const map = getStatusMap();
+      map[id] = status;
+      localStorage.setItem('franca_crm_status', JSON.stringify(map));
+      renderLeads();
+      updateKpis();
+    }
+
+    function markSentIfPending(id) {
+      const map = getStatusMap();
+      if (!map[id] || map[id] === 'pending') {
+        setLeadStatus(id, 'sent');
+      }
+    }
+
+    function getBaseUrl() {
+      const input = document.getElementById('base-url-input');
+      return (input.value || window.location.origin).trim().replace(/\/+$/, '');
+    }
+
+    function applyBaseUrl() {
+      localStorage.setItem('franca_base_url', getBaseUrl());
+      localStorage.setItem('franca_build_base_url', BUILD_BASE_URL);
+      renderLeads();
+    }
+
+    function setSiteFilter(mode) {
+      currentSiteFilter = mode;
+      const btnNoSite = document.getElementById('btn-mode-nosite');
+      const btnAll = document.getElementById('btn-mode-all');
+      if (mode === 'no-website') {
+        btnNoSite.className = 'px-3.5 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold shadow';
+        btnAll.className = 'px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold';
+      } else {
+        btnAll.className = 'px-3.5 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold shadow';
+        btnNoSite.className = 'px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold';
+      }
+      renderLeads();
+    }
+
+    function setNicheFilter(niche) {
+      currentNicheFilter = niche;
+      renderLeads();
+    }
+
+    function buildDynamicPitch(lead) {
+      const base = getBaseUrl();
+      const previewUrl = base + lead.previewPath;
+      const topServices = lead.services.slice(0, 2).join(' e ');
+
+      const icebreaker =
+        "Olá, tudo bem? Vocês da *" + lead.name + "* ainda estão atendendo ali no bairro *" + lead.neighborhood + "* aqui em Franca?\n\n" +
+        "Pesquisei o nome de vocês no Google e vi que o perfil está *sem site próprio cadastrado* (apareceu apenas em um catálogo telefônico antigo).";
+
+      const firstContact =
+        "Olá, equipe da *" + lead.name + "*! Tudo bem?\n\n" +
+        "Notei que quando alguém pesquisa por *" + lead.category + "* ou pelo nome de vocês no Google aqui em Franca (" + lead.neighborhood + "), vocês estão *sem site próprio cadastrado* — o Google acaba jogando o cliente para diretórios genéricos cheios de concorrentes.\n\n" +
+        "Tomei a liberdade de criar o *Site Oficial de Agendamentos com Triagem Inteligente no WhatsApp* exclusivo para vocês verem como fica:\n" +
+        "👉 " + previewUrl + "\n\n" +
+        "Repare no botão verdinho no canto da tela: o cliente já escolhe se busca *" + topServices + "* e cai direto aqui no WhatsApp de vocês com a mensagem pronta.\n\n" +
+        "Se gostarem, consigo ativar no Google Maps e no Instagram de vocês ainda hoje. O que acharam?";
+
+      const followUp =
+        "Olá, pessoal da *" + lead.name + "*! Passando rapidinho para saber se conseguiram abrir a demonstração do site oficial que montei para vocês colocarem no Google Maps e Instagram aqui em Franca:\n\n" +
+        "👉 " + previewUrl + "\n\n" +
+        "Estou liberando apenas 2 ativações essa semana em Franca com condição especial (R$ 500 pagamento único no PIX, sem mensalidade obrigatória, já com o Assistente de Triagem do WhatsApp incluso). Querem que eu ative o de vocês?";
+
+      const objectionHandler =
+        "Entendo perfeitamente! Inclusive o objetivo desse site é justamente preencher o botão *\"Website\"* que hoje está vazio no Google de vocês e servir como a vitrine oficial na Bio do Instagram da *" + lead.name + "*.\n\n" +
+        "Hoje, quem procura no Google em Franca (" + lead.neighborhood + ") e vê que a empresa não tem site próprio muitas vezes acaba clicando no concorrente ou fica perdido nos diretórios. Com essa página + Triagem Rápida, a pessoa vê a estrutura de vocês, escolhe o serviço (" + topServices + ") e já chega pronta no WhatsApp para fechar.\n\n" +
+        "Como o site de vocês já está 95% pronto nesse link (" + previewUrl + "), consigo liberar por *R$ 500 no PIX* (sendo 50% agora de R$ 250 e os outros R$ 250 só depois que estiver 100% ajustado com as fotos/logo que vocês quiserem). Fechamos assim?";
+
+      return {
+        previewUrl,
+        icebreaker,
+        firstContact,
+        followUp,
+        objectionHandler,
+        waIcebreaker: "https://wa.me/" + lead.phoneDigits + "?text=" + encodeURIComponent(icebreaker),
+        waFirst: "https://wa.me/" + lead.phoneDigits + "?text=" + encodeURIComponent(firstContact),
+        waFollow: "https://wa.me/" + lead.phoneDigits + "?text=" + encodeURIComponent(followUp)
+      };
+    }
+
+    function updateKpis() {
+      const map = getStatusMap();
+      let revenue = 0;
+      let contacted = 0;
+      LEADS_DATA.forEach((l) => {
+        const st = map[l.id] || 'pending';
+        if (st !== 'pending') contacted++;
+        if (st === 'closed_500') revenue += 500;
+        if (st === 'closed_750') revenue += 750;
+      });
+      document.getElementById('kpi-revenue').textContent = 'R$ ' + revenue.toLocaleString('pt-BR');
+      const pct = Math.min(100, Math.round((revenue / 1000) * 100));
+      document.getElementById('kpi-progress-bar').style.width = pct + '%';
+      document.getElementById('kpi-contacted').textContent = contacted + ' / ' + LEADS_DATA.length;
+    }
+
+    function openScriptsModal(leadId) {
+      const lead = LEADS_DATA.find((l) => l.id === leadId);
+      if (!lead) return;
+      const dynamic = buildDynamicPitch(lead);
+      document.getElementById('modal-clinic-name').textContent = lead.name + ' (' + lead.neighborhood + ')';
+      document.getElementById('modal-msg-0').textContent = dynamic.icebreaker;
+      document.getElementById('modal-msg-1').textContent = dynamic.firstContact;
+      document.getElementById('modal-msg-2').textContent = dynamic.followUp;
+      document.getElementById('modal-msg-3').textContent = dynamic.objectionHandler;
+      document.getElementById('script-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('script-modal').classList.add('hidden');
+    }
+
+    function copyText(elementId) {
+      const txt = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(txt);
+      alert('Script copiado para a área de transferência!');
+    }
+
+    function renderLeads() {
+      const container = document.getElementById('leads-container');
+      const statusMap = getStatusMap();
+      const filtered = LEADS_DATA.filter((l) => {
+        if (currentSiteFilter === 'no-website' && l.hasWebsite) return false;
+        if (currentNicheFilter !== 'all' && l.niche !== currentNicheFilter) return false;
+        return true;
+      });
+
+      document.getElementById('showing-counter').textContent =
+        'Exibindo ' + filtered.length + ' de ' + LEADS_DATA.length + ' empresas no histórico';
+
+      container.innerHTML = filtered.map((lead) => {
+        const st = statusMap[lead.id] || 'pending';
+        const dyn = buildDynamicPitch(lead);
+        const safeId = escapeHtmlClient(lead.id);
+        const safeName = escapeHtmlClient(lead.name);
+        const safeNiche = escapeHtmlClient(lead.niche);
+        const safeBatch = escapeHtmlClient(lead.batch);
+        const safePresence = escapeHtmlClient(lead.presenceSource);
+        const safeNeighborhood = escapeHtmlClient(lead.neighborhood);
+        const safeAddress = escapeHtmlClient(lead.address);
+        const safePhone = escapeHtmlClient(lead.phone);
+        const safeDiagnostic = escapeHtmlClient(lead.diagnostic);
+        const safePreviewUrl = escapeHtmlClient(dyn.previewUrl);
+        const safeWaIce = escapeHtmlClient(dyn.waIcebreaker);
+        const safeWaFirst = escapeHtmlClient(dyn.waFirst);
+        const safeWaFollow = escapeHtmlClient(dyn.waFollow);
+
+        const noSiteBadge = !lead.hasWebsite
+          ? '<span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">🔥 100% Sem Site</span>'
+          : '<span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-slate-800 text-slate-400">📁 Lote 1 (Já tinha site)</span>';
+
+        const nicheBadge = '<span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-500/20 text-indigo-300">' + safeNiche + '</span>';
+
+        return `
+          <div class="bg-slate-900 border ${!lead.hasWebsite ? 'border-emerald-500/30' : 'border-slate-800'} hover:border-slate-600 rounded-2xl p-5 transition-all">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+              <div class="space-y-1.5 max-w-2xl">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="text-xs font-mono text-slate-500">#${lead.index}</span>
+                  <h3 class="text-base md:text-lg font-bold text-white">${safeName}</h3>
+                  ${noSiteBadge}
+                  ${nicheBadge}
+                </div>
+                <p class="text-xs text-slate-400">
+                  📍 <strong>${safeNeighborhood}</strong> (${safeAddress}) •
+                  <strong class="text-emerald-400">WhatsApp: ${safePhone}</strong>
+                </p>
+                <p class="text-[11px] text-amber-300/90 font-medium">
+                  🔍 Fonte Auditada: ${safePresence} • [${safeBatch}]
+                </p>
+                <p class="text-xs text-slate-300 bg-slate-950/80 px-3 py-2 rounded-xl border border-slate-800/80">
+                  💡 <strong>Diagnóstico IA:</strong> ${safeDiagnostic}
+                </p>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-2 shrink-0">
+                <a href="${safePreviewUrl}" target="_blank" rel="noopener"
+                   class="px-3 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-100 font-semibold text-xs transition-all">
+                  👁️ Ver Site Pronto
+                </a>
+
+                <a href="${safeWaIce}" target="_blank" rel="noopener"
+                   data-lead-id="${safeId}" onclick="markSentIfPending(this.getAttribute('data-lead-id'))"
+                   class="px-3.5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs shadow-lg shadow-amber-500/20 transition-all"
+                   title="Manda pergunta rápida sem link para a recepcionista/dono responder em 5 minutos">
+                  ⚡ 1. Quebra-Gelo (Sem Link)
+                </a>
+
+                <a href="${safeWaFirst}" target="_blank" rel="noopener"
+                   data-lead-id="${safeId}" onclick="markSentIfPending(this.getAttribute('data-lead-id'))"
+                   class="px-3.5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg shadow-emerald-600/20 transition-all">
+                  📲 2. Enviar Site Pronto
+                </a>
+
+                <button type="button" data-lead-id="${safeId}" onclick="openScriptsModal(this.getAttribute('data-lead-id'))"
+                        class="px-3 py-2.5 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 font-semibold text-xs border border-purple-500/30 transition-all">
+                  💬 Scripts &amp; PIX
+                </button>
+
+                <select data-lead-id="${safeId}" onchange="setLeadStatus(this.getAttribute('data-lead-id'), this.value)"
+                        class="bg-slate-950 text-xs font-semibold px-3 py-2.5 rounded-xl border border-slate-700 text-slate-200">
+                  <option value="pending" ${st === 'pending' ? 'selected' : ''}>⏳ Pendente</option>
+                  <option value="sent" ${st === 'sent' ? 'selected' : ''}>📨 Abordado</option>
+                  <option value="negotiating" ${st === 'negotiating' ? 'selected' : ''}>🔥 Respondeu / Negociando</option>
+                  <option value="closed_500" ${st === 'closed_500' ? 'selected' : ''}>✅ Fechado (R$ 500)</option>
+                  <option value="closed_750" ${st === 'closed_750' ? 'selected' : ''}>🚀 Fechado + Upsell (R$ 750)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    (function init() {
+      const savedBase = localStorage.getItem('franca_base_url');
+      const savedBuildBase = localStorage.getItem('franca_build_base_url');
+      if (savedBase && savedBuildBase === BUILD_BASE_URL) {
+        document.getElementById('base-url-input').value = savedBase;
+      } else {
+        document.getElementById('base-url-input').value = BUILD_BASE_URL;
+        localStorage.setItem('franca_base_url', BUILD_BASE_URL);
+        localStorage.setItem('franca_build_base_url', BUILD_BASE_URL);
+      }
+      renderLeads();
+      updateKpis();
+    })();
+  </script>
+</body>
+</html>
